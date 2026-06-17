@@ -206,7 +206,7 @@
                     <i class="fa-solid fa-pen-nib text-3xl"></i>
                 </div>
                 <h3 class="font-semibold text-2xl">Lasersko graviranje</h3>
-                <p class="mt-3 text-slate-600">Precizno graviranje na drvetu, koži, akrilu, staklu, metalu i kamenju.</p>
+                <p class="mt-3 text-slate-600">Precizno graviranje na drvetu, ko��i, akrilu, staklu, metalu i kamenju.</p>
                 <ul class="mt-6 space-y-2 text-sm">
                     <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Drvo i MDF</li>
                     <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Koža i umetna koža</li>
@@ -534,7 +534,7 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
     <script>
         // Tailwind script
         function initializeTailwind() {
@@ -599,9 +599,17 @@
         
         // Contact form sa EmailJS
         function initContactForm() {
-            // Inicijalizuj EmailJS
-            emailjs.init("pYVAlM4Thq_GfxxrH");
-            
+            // Čekaj da se EmailJS biblioteka učita
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init("pYVAlM4Thq_GfxxrH");
+                setupFormListener();
+            } else {
+                // Ako nije učitana, pokušaj ponovo nakon 500ms
+                setTimeout(initContactForm, 500);
+            }
+        }
+        
+        function setupFormListener() {
             const form = document.getElementById('contact-form');
             
             form.addEventListener('submit', function(e) {
