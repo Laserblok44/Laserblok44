@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencija MI • Lasersko Graviranje i Sečenje | Srbija</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --primary: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .nav-scrolled {
+            background-color: rgba(255,255,255,0.95);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .gallery-img {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                       box-shadow 0.3s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #0f172a, #334155);
+            border-radius: 9999px;
+        }
+
+        .laser-effect {
+            position: relative;
+        }
+        
+        .laser-effect:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #64748b, transparent);
+            animation: laser-scan 3s infinite linear;
+        }
+
+        @keyframes laser-scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-slate-900 rounded-2xl flex items-center justify-center">
+                        <i class="fa-solid fa-atom text-white text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-3xl tracking-tighter">Agencija MI</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#usluge" class="nav-link text-slate-600 hover:text-slate-900">Usluge</a>
+                    <a href="#oprema" class="nav-link text-slate-600 hover:text-slate-900">Oprema</a>
+                    <a href="#galerija" class="nav-link text-slate-600 hover:text-slate-900">Galerija</a>
+                    <a href="#o-nama" class="nav-link text-slate-600 hover:text-slate-900">O nama</a>
+                    <a href="#kontakt" class="nav-link text-slate-600 hover:text-slate-900">Kontakt</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <!-- CTA Button -->
+                    <a href="#kontakt" 
+                       class="hidden md:block px-5 py-2.5 text-sm font-semibold bg-slate-900 text-white rounded-3xl hover:bg-slate-800 transition-colors">
+                        Zatražite ponudu
+                    </a>
+                    
+                    <!-- Mobile Menu -->
+                    <button id="mobile-menu-btn"
+                            class="md:hidden w-10 h-10 flex items-center justify-center text-slate-700">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center pt-20">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-3xl mb-6">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span class="text-emerald-700 text-sm font-semibold tracking-wide">Srbija • 2026</span>
+                </div>
+                
+                <h1 class="text-7xl md:text-7xl font-bold tracking-tighter text-white leading-none">
+                    Lasersko<br>graviranje<br>sa preciznošću.
+                </h1>
+                
+                <p class="mt-6 max-w-md text-lg text-slate-200">
+                    Profesionalno lasersko graviranje i sečenje za poklone, 
+                    reklamne materijale, industriju i personalizovane proizvode.
+                </p>
+                
+                <div class="flex items-center gap-x-4 mt-10">
+                    <a href="#kontakt" 
+                       class="inline-flex items-center justify-center gap-x-3 px-8 h-14 bg-white text-slate-900 font-semibold rounded-3xl hover:bg-slate-100 transition-all active:scale-[0.985]">
+                        Zatražite besplatnu ponudu
+                    </a>
+                    <a href="#galerija" 
+                       class="inline-flex items-center justify-center gap-x-3 px-6 h-14 border border-white/40 text-white font-medium rounded-3xl hover:bg-white/10 transition-all">
+                        Pogledajte radove
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-x-8 mt-12 text-sm text-white/70">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i>
+                        <span>Preko 850 zadovoljnih klijenata</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="border-b border-slate-200 bg-white py-5">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-75">
+                <div class="text-sm font-medium text-slate-500">Saradnja sa:</div>
+                <div class="flex items-center gap-x-8 text-sm font-semibold text-slate-600">
+                    <span>NIS</span>
+                    <span>Delta Holding</span>
+                    <span>WinWin</span>
+                    <span>Telekom Srbija</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="usluge" class="max-w-screen-xl mx-auto px-6 pt-20 pb-16">
+        <div class="max-w-2xl">
+            <span class="text-emerald-600 text-sm font-semibold tracking-[3px]">ŠTA RADIMO</span>
+            <h2 class="text-5xl font-bold tracking-tighter mt-3">Usluge po meri vaših ideja</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            
+            <!-- Service 1 -->
+            <div class="service-card bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-pen-nib text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-2xl">Lasersko graviranje</h3>
+                <p class="mt-3 text-slate-600">Precizno graviranje na drvetu, koži, akrilu, staklu, metalu i kamenju.</p>
+                <ul class="mt-6 space-y-2 text-sm">
+                    <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Drvo i MDF</li>
+                    <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Koža i umetna koža</li>
+                    <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Akril i pleksiglas</li>
+                    <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Metal (anodizovani)</li>
+                </ul>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="service-card bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-cut text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-2xl">Lasersko sečenje</h3>
+                <p class="mt-3 text-slate-600">Brzo i precizno sečenje različitih materijala do 20mm debljine.</p>
+                <ul class="mt-6 space-y-2 text-sm">
+                    <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Drvo i furnir</li>
+                    <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Akril do 15mm</li>
+                    <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Koža i tekstil</li>
+                    <li class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Karton i papir</li>
+                </ul>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="service-card bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-gift text-3xl"></i>
+                </div>
+                <h3 class="font-semibold text-2xl">Personalizovani pokloni</h3>
+                <p class="mt-3 text-slate-600">Jedinstveni pokloni za rođendane, venčanja, korporativne događaje i promocije.</p>
+                
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="text-xs px-3 py-1 bg-slate-100 rounded-2xl">Kutije za nakit</span>
+                    <span class="text-xs px-3 py-1 bg-slate-100 rounded-2xl">Foto ramovi</span>
+                    <span class="text-xs px-3 py-1 bg-slate-100 rounded-2xl">Bocice za vino</span>
+                    <span class="text-xs px-3 py-1 bg-slate-100 rounded-2xl">Plakete</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oprema Section -->
+    <section id="oprema" class="max-w-screen-xl mx-auto px-6 py-16 border-t border-slate-100">
+        <div class="max-w-2xl mb-10">
+            <span class="text-emerald-600 text-sm font-semibold tracking-[3px]">NAŠA OPREMA</span>
+            <h2 class="text-5xl font-bold tracking-tighter mt-3">Profesionalni laseri za vrhunske rezultate</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- CO2 Laser -->
+            <div class="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm">
+                <div class="aspect-video bg-slate-100 flex items-center justify-center">
+                    <img src="co2_laser_slika.jpg" alt="CO2 Laser 140x90cm" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-semibold text-2xl">CO₂ Laser</h3>
+                            <p class="text-emerald-600 font-medium">Radna površina: 140 × 90 cm</p>
+                        </div>
+                        <div class="px-4 py-1 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-2xl">CO₂</div>
+                    </div>
+                    <p class="mt-4 text-slate-600">Moćan CO₂ laser sa velikom radnom površinom, idealan za sečenje i graviranje većih materijala poput drveta, akrila, kože i MDF-a.</p>
+                </div>
+            </div>
+
+            <!-- xTool F1 Ultra -->
+            <div class="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-sm">
+                <div class="aspect-video bg-slate-100 flex items-center justify-center">
+                    <img src="xTool-F1-Ultra-Laser-0b.jpg" alt="xTool F1 Ultra laser engraver" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center justify-between flex-wrap gap-3">
+                        <div>
+                            <h3 class="font-semibold text-2xl">xTool F1 Ultra</h3>
+                            <p class="text-emerald-600 font-medium">Dual Laser sistem (Fiber + Diode)</p>
+                        </div>
+                        <div class="px-4 py-1 bg-blue-100 text-blue-700 text-sm font-semibold rounded-2xl">Fiber + Diode</div>
+                    </div>
+                    <p class="mt-4 text-slate-600">Najnoviji xTool F1 Ultra – kombinacija fiber i diode lasera. Odličan za precizno graviranje i sečenje na metalu, plastici, drvetu, koži i drugim materijalima sa izuzetnom preciznošću.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerija" class="bg-white py-16 border-t border-slate-100">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex items-end justify-between mb-10">
+                <div>
+                    <span class="text-emerald-600 text-sm font-semibold tracking-[3px]">NAŠI RADOVI</span>
+                    <h2 class="text-5xl font-bold tracking-tighter mt-1">Inspiracija iz stvarnih projekata</h2>
+                </div>
+                <a href="#" class="hidden md:flex items-center gap-x-2 text-sm font-medium text-slate-600 hover:text-slate-900">
+                    Pogledajte celu galeriju <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                
+                <!-- Slika 1: Gajbica -->
+                <div class="aspect-square overflow-hidden rounded-3xl">
+                    <img src="gajbica.jpeg" alt="Personalizovana gajbica za penziju" class="w-full h-full object-cover gallery-img">
+                </div>
+
+                <!-- Video 1: Upaljač -->
+                <div class="aspect-square overflow-hidden rounded-3xl bg-black">
+                    <video controls class="w-full h-full object-cover">
+                        <source src="upaljac.mp4" type="video/mp4">
+                        Tvoj browser ne podržava video.
+                    </video>
+                </div>
+
+                <!-- Video 2: Pluta rad -->
+                <div class="aspect-square overflow-hidden rounded-3xl bg-black">
+                    <video controls class="w-full h-full object-cover">
+                        <source src="pluta_rad.mp4" type="video/mp4">
+                        Tvoj browser ne podržava video.
+                    </video>
+                </div>
+
+                <!-- Video 3: Pluta final -->
+                <div class="aspect-square overflow-hidden rounded-3xl bg-black">
+                    <video controls class="w-full h-full object-cover">
+                        <source src="pluta final.mp4" type="video/mp4">
+                        Tvoj browser ne podržava video.
+                    </video>
+                </div>
+
+                <!-- Slika 2: Alu vizitkarta -->
+                <div class="aspect-square overflow-hidden rounded-3xl">
+                    <img src="alu_vizitkarta3.jpeg" alt="Aluminijumska vizitkarta" class="w-full h-full object-cover gallery-img">
+                </div>
+
+                <!-- Video 4: Alu vizitkarta1 -->
+                <div class="aspect-square overflow-hidden rounded-3xl bg-black">
+                    <video controls class="w-full h-full object-cover">
+                        <source src="alu vizitkarta1.mp4" type="video/mp4">
+                        Tvoj browser ne podržava video.
+                    </video>
+                </div>
+
+                <!-- Video 5: Alu vizitkarta2 -->
+                <div class="aspect-square overflow-hidden rounded-3xl bg-black">
+                    <video controls class="w-full h-full object-cover">
+                        <source src="alu vizitkarta2.mp4" type="video/mp4">
+                        Tvoj browser ne podržava video.
+                    </video>
+                </div>
+
+                <!-- Video 6: Anđela viljuška -->
+                <div class="aspect-square overflow-hidden rounded-3xl bg-black">
+                    <video controls class="w-full h-full object-cover">
+                        <source src="Andjela viljuska.mp4" type="video/mp4">
+                        Tvoj browser ne podržava video.
+                    </video>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-8 md:hidden">
+                <a href="#" class="inline-flex items-center gap-x-2 text-sm font-medium text-slate-600">
+                    Pogledajte celu galeriju <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="o-nama" class="max-w-screen-xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-12 gap-x-12 items-center">
+            <div class="md:col-span-7">
+                <span class="text-emerald-600 text-sm font-semibold tracking-[3px]">ZAŠTO AGENCIJA MI</span>
+                <h2 class="text-5xl font-bold tracking-tighter mt-3 leading-tight">Preciznost koju možete videti i osetiti.</h2>
+                
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 text-sm">
+                    <div>
+                        <div class="font-semibold text-lg">Najsavremenija oprema</div>
+                        <p class="mt-1.5 text-slate-600">Koristimo CO2 i fiber lasere najnovije generacije sa preciznošću od 0.01mm.</p>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-lg">Brza isporuka</div>
+                        <p class="mt-1.5 text-slate-600">Većina porudžbina se završava u roku od 24-48 sati.</p>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-lg">Kvalitetni materijali</div>
+                        <p class="mt-1.5 text-slate-600">Radimo isključivo sa proverenim i visokokvalitetnim materijalima.</p>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-lg">Prilagođena rešenja</div>
+                        <p class="mt-1.5 text-slate-600">Svaki projekat prilagođavamo vašim specifičnim potrebama.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:col-span-5 mt-10 md:mt-0 bg-slate-900 text-white p-8 rounded-3xl">
+                <div class="flex items-center gap-x-4">
+                    <div class="text-6xl font-bold text-emerald-400">12</div>
+                    <div>
+                        <div class="font-semibold">godina iskustva</div>
+                        <div class="text-sm text-slate-400">u laserskoj obradi</div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 border-t border-white/20 pt-8">
+                    <div class="flex items-center justify-between text-sm">
+                        <div>
+                            <div class="font-medium">Prosečna ocena</div>
+                            <div class="flex items-center gap-x-1 mt-1">
+                                <span class="text-3xl font-semibold">4.98</span>
+                                <span class="text-emerald-400">/ 5</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-medium">1.240+</div>
+                            <div class="text-xs text-slate-400">završenih projekata</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="bg-slate-900 text-white py-20">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                
+                <!-- Contact Info -->
+                <div>
+                    <span class="text-emerald-400 text-sm font-semibold tracking-[3px]">KONTAKTIRAJTE NAS</span>
+                    <h2 class="text-5xl font-bold tracking-tighter mt-4 leading-none">Spremni smo za vaš sledeći projekat.</h2>
+                    
+                    <div class="mt-10 space-y-6">
+                        <div class="flex items-start gap-x-4">
+                            <div class="w-5 mt-1"><i class="fa-solid fa-map-marker-alt"></i></div>
+                            <div>
+                                <div class="font-medium">Beograd, Srbija</div>
+                                <div class="text-sm text-slate-400">Nehruova 51a</div>
+                                <a href="https://www.google.com/maps/search/?api=1&query=Nehruova+51a%2C+Beograd" target="_blank" 
+                                   class="text-xs text-emerald-400 hover:underline inline-flex items-center gap-x-1 mt-0.5">
+                                    <i class="fa-solid fa-map-marker-alt text-[10px]"></i> 
+                                    <span>Prikaži na mapi</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-x-4">
+                            <div class="w-5 mt-1"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <a href="tel:+381606180616" class="font-medium hover:underline">+381 60 618 0616</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-x-4">
+                            <div class="w-5 mt-1"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <a href="/cdn-cgi/l/email-protection#016d607264636d6e6a353541666c60686d2f626e6c" class="font-medium hover:underline"><span class="__cf_email__" data-cfemail="a8c4c9dbcdcac4c7c39c9ce8cfc5c9c1c486cbc7c5">[email&#160;protected]</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <div class="text-sm text-slate-400 mb-3">Pratite nas</div>
+                        <div class="flex items-center gap-x-4">
+                            <a href="https://www.instagram.com/laser_blok44/" target="_blank" 
+                               class="flex items-center gap-x-2 px-4 py-2 border border-white/20 rounded-3xl hover:bg-white/10 transition-colors text-sm">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span>@laser_blok44</span>
+                            </a>
+                            
+                            <a href="#" class="w-11 h-11 flex items-center justify-center border border-white/20 rounded-2xl hover:bg-white/10 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="w-11 h-11 flex items-center justify-center border border-white/20 rounded-2xl hover:bg-white/10 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium mb-1.5 text-white/80">Ime i prezime</label>
+                                <input type="text" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1.5 text-white/80">Telefon</label>
+                                <input type="tel" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5 text-white/80">Email adresa</label>
+                            <input type="email" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5 text-white/80">Opis projekta</label>
+                            <textarea rows="4" required placeholder="Recite nam više o vašem projektu..." class="w-full bg-white/10 border border-white/20 rounded-3xl px-5 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400 resize-y"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full h-14 bg-emerald-500 hover:bg-emerald-600 transition-colors font-semibold text-lg rounded-3xl flex items-center justify-center gap-x-2">
+                            <span>Pošalji upit</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        
+                        <p class="text-center text-xs text-white/50">Odgovor ćemo vam poslati u roku od 24 sata.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white/60 py-8 text-sm">
+        <div class="max-w-screen-xl mx-auto px-6 flex flex-col md:flex-row md:items-center justify-between gap-y-4">
+            <div>© 2026 Agencija MI. Sva prava zadržana.</div>
+            <div class="flex gap-x-6">
+                <a href="#" class="hover:text-white">Politika privatnosti</a>
+                <a href="#" class="hover:text-white">Uslovi korišćenja</a>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#0f172a');
+        }
+        
+        // Navbar scroll effect
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('nav-scrolled');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                }
+            });
+        }
+        
+        // Mobile menu
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            
+            btn.addEventListener('click', () => {
+                const nav = document.createElement('div');
+                nav.className = `fixed inset-0 bg-slate-900/95 z-[60] flex flex-col p-6 md:hidden`;
+                nav.innerHTML = `
+                    <div class="flex justify-between items-center mb-10">
+                        <div class="flex items-center gap-x-3">
+                            <div class="w-10 h-10 bg-white rounded-2xl flex items-center justify-center">
+                                <i class="fa-solid fa-atom text-slate-900 text-3xl"></i>
+                            </div>
+                            <span class="font-semibold text-white text-3xl">Agencija MI</span>
+                        </div>
+                        <button class="text-white text-3xl">&times;</button>
+                    </div>
+                    
+                    <div class="flex flex-col gap-y-1 text-lg">
+                        <a href="#usluge" class="py-4 px-2 text-white hover:bg-white/10 rounded-2xl">Usluge</a>
+                        <a href="#galerija" class="py-4 px-2 text-white hover:bg-white/10 rounded-2xl">Galerija</a>
+                        <a href="#o-nama" class="py-4 px-2 text-white hover:bg-white/10 rounded-2xl">O nama</a>
+                        <a href="#kontakt" class="py-4 px-2 text-white hover:bg-white/10 rounded-2xl">Kontakt</a>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <a href="#kontakt" class="block text-center py-4 bg-white text-slate-900 font-semibold rounded-3xl">Zatražite ponudu</a>
+                    </div>
+                `;
+                
+                document.body.appendChild(nav);
+                
+                nav.querySelector('button').addEventListener('click', () => {
+                    nav.remove();
+                });
+                
+                // Close on link click
+                nav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => nav.remove());
+                });
+            });
+        }
+        
+        // Contact form
+        function initContactForm() {
+            const form = document.getElementById('contact-form');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const btn = form.querySelector('button');
+                const originalText = btn.innerHTML;
+                
+                btn.innerHTML = `
+                    <span>Šaljemo...</span>
+                    <i class="fa-solid fa-spinner fa-spin ml-2"></i>
+                `;
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    btn.innerHTML = `
+                        <span>Hvala! Upit poslat.</span>
+                    `;
+                    btn.classList.remove('bg-emerald-500', 'hover:bg-emerald-600');
+                    btn.classList.add('bg-emerald-600');
+                    
+                    setTimeout(() => {
+                        form.reset();
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                        btn.classList.remove('bg-emerald-600');
+                        btn.classList.add('bg-emerald-500', 'hover:bg-emerald-600');
+                        
+                        // Success message
+                        const success = document.createElement('div');
+                        success.className = `mt-4 text-center text-emerald-400 text-sm`;
+                        success.innerHTML = `Vaš upit je uspešno poslat. Kontaktiraćemo vas uskoro.`;
+                        form.appendChild(success);
+                        
+                        setTimeout(() => {
+                            success.remove();
+                        }, 4000);
+                    }, 2200);
+                }, 1600);
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 80;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition - bodyRect - offset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Initialize everything
+        function init() {
+            initializeTailwind();
+            initNavbar();
+            initMobileMenu();
+            initContactForm();
+            initSmoothScroll();
+            
+            // Easter egg - laser scan on logo
+            const logo = document.querySelector('.fa-atom');
+            if (logo) {
+                logo.addEventListener('click', () => {
+                    logo.style.transition = 'transform 0.3s';
+                    logo.style.transform = 'rotate(360deg)';
+                    setTimeout(() => {
+                        logo.style.transform = 'rotate(0deg)';
+                    }, 600);
+                });
+            }
+        }
+        
+        window.onload = init;
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a082db36bbc996e0',t:'MTc4MDg2ODg1Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
