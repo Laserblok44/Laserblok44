@@ -6,6 +6,7 @@
     <title>Agencija MI • Lasersko Graviranje i Sečenje | Srbija</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
         
@@ -124,7 +125,7 @@
                     <!-- CTA Button -->
                     <a href="#kontakt" 
                        class="hidden md:block px-5 py-2.5 text-sm font-semibold bg-slate-900 text-white rounded-3xl hover:bg-slate-800 transition-colors">
-                        Zatražite ponudu
+                         Zatražite ponudu
                     </a>
                     
                     <!-- Mobile Menu -->
@@ -158,11 +159,11 @@
                 <div class="flex items-center gap-x-4 mt-10">
                     <a href="#kontakt" 
                        class="inline-flex items-center justify-center gap-x-3 px-8 h-14 bg-white text-slate-900 font-semibold rounded-3xl hover:bg-slate-100 transition-all active:scale-[0.985]">
-                        Zatražite besplatnu ponudu
+                         Zatražite besplatnu ponudu
                     </a>
                     <a href="#galerija" 
                        class="inline-flex items-center justify-center gap-x-3 px-6 h-14 border border-white/40 text-white font-medium rounded-3xl hover:bg-white/10 transition-all">
-                        Pogledajte radove
+                         Pogledajte radove
                     </a>
                 </div>
                 
@@ -287,7 +288,7 @@
                         </div>
                         <div class="px-4 py-1 bg-blue-100 text-blue-700 text-sm font-semibold rounded-2xl">Fiber + Diode</div>
                     </div>
-                    <p class="mt-4 text-slate-600">Najnoviji xTool F1 Ultra – kombinacija fiber i diode lasera. Odličan za precizno graviranje i sečenje na metalu, plastici, drvetu, koži i drugim materijalima sa izuzetnom preciznošću.</p>
+                    <p class="mt-4 text-slate-600">Najnoviji xTool F1 Ultra – kombinacija fiber i diode lasera. Odličan za precizno graviranje i sečenje na metalu, plastici, drvetu, koži i d[...]</p>
                 </div>
             </div>
 
@@ -466,7 +467,7 @@
                         <div class="flex items-start gap-x-4">
                             <div class="w-5 mt-1"><i class="fa-solid fa-envelope"></i></div>
                             <div>
-                                <a href="/cdn-cgi/l/email-protection#016d607264636d6e6a353541666c60686d2f626e6c" class="font-medium hover:underline"><span class="__cf_email__" data-cfemail="a8c4c9dbcdcac4c7c39c9ce8cfc5c9c1c486cbc7c5">[email&#160;protected]</span></a>
+                                <a href="mailto:info@agencijami.rs" class="font-medium hover:underline">info@agencijami.rs</a>
                             </div>
                         </div>
                     </div>
@@ -492,22 +493,22 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
                                 <label class="block text-sm font-medium mb-1.5 text-white/80">Ime i prezime</label>
-                                <input type="text" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400">
+                                <input type="text" name="user_name" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400 transition-colors" placeholder="Vaše ime">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-1.5 text-white/80">Telefon</label>
-                                <input type="tel" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400">
+                                <input type="tel" name="user_phone" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400 transition-colors" placeholder="Vaš telefon">
                             </div>
                         </div>
                         
                         <div>
                             <label class="block text-sm font-medium mb-1.5 text-white/80">Email adresa</label>
-                            <input type="email" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400">
+                            <input type="email" name="user_email" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400 transition-colors" placeholder="Vaš email">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-medium mb-1.5 text-white/80">Opis projekta</label>
-                            <textarea rows="4" required placeholder="Recite nam više o vašem projektu..." class="w-full bg-white/10 border border-white/20 rounded-3xl px-5 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400 resize-y"></textarea>
+                            <textarea rows="4" name="message" required placeholder="Recite nam više o vašem projektu..." class="w-full bg-white/10 border border-white/20 rounded-3xl px-5 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-400 transition-colors resize-none"></textarea>
                         </div>
                         
                         <button type="submit" 
@@ -534,8 +535,12 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Inicijalizuj EmailJS sa tvojim PUBLIC KEY-om
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Zamijeni sa tvojim Public Key
+        })();
+
         // Tailwind script
         function initializeTailwind() {
             document.documentElement.style.setProperty('--accent', '#0f172a');
@@ -597,7 +602,7 @@
             });
         }
         
-        // Contact form
+        // Contact form sa EmailJS
         function initContactForm() {
             const form = document.getElementById('contact-form');
             
@@ -613,31 +618,50 @@
                 `;
                 btn.disabled = true;
                 
-                setTimeout(() => {
-                    btn.innerHTML = `
-                        <span>Hvala! Upit poslat.</span>
-                    `;
-                    btn.classList.remove('bg-emerald-500', 'hover:bg-emerald-600');
-                    btn.classList.add('bg-emerald-600');
-                    
-                    setTimeout(() => {
-                        form.reset();
-                        btn.innerHTML = originalText;
-                        btn.disabled = false;
-                        btn.classList.remove('bg-emerald-600');
-                        btn.classList.add('bg-emerald-500', 'hover:bg-emerald-600');
+                // Pošalji email koristeći EmailJS
+                emailjs.sendForm('service_agencija_mi', 'template_kontakt', form)
+                    .then(function(response) {
+                        console.log('Email poslat!', response.status, response.text);
                         
-                        // Success message
-                        const success = document.createElement('div');
-                        success.className = `mt-4 text-center text-emerald-400 text-sm`;
-                        success.innerHTML = `Vaš upit je uspešno poslat. Kontaktiraćemo vas uskoro.`;
-                        form.appendChild(success);
+                        btn.innerHTML = `
+                            <span>Hvala! Upit poslat.</span>
+                        `;
+                        btn.classList.remove('bg-emerald-500', 'hover:bg-emerald-600');
+                        btn.classList.add('bg-emerald-600');
                         
                         setTimeout(() => {
-                            success.remove();
-                        }, 4000);
-                    }, 2200);
-                }, 1600);
+                            form.reset();
+                            btn.innerHTML = originalText;
+                            btn.disabled = false;
+                            btn.classList.remove('bg-emerald-600');
+                            btn.classList.add('bg-emerald-500', 'hover:bg-emerald-600');
+                            
+                            // Success message
+                            const success = document.createElement('div');
+                            success.className = `mt-4 text-center text-emerald-400 text-sm`;
+                            success.innerHTML = `Vaš upit je uspešno poslat. Kontaktiraćemo vas uskoro.`;
+                            form.appendChild(success);
+                            
+                            setTimeout(() => {
+                                success.remove();
+                            }, 4000);
+                        }, 1500);
+                    }, function(error) {
+                        console.log('Greška pri slanju:', error);
+                        
+                        btn.innerHTML = `
+                            <span>Greška! Pokušajte ponovo.</span>
+                        `;
+                        btn.classList.remove('bg-emerald-500', 'hover:bg-emerald-600');
+                        btn.classList.add('bg-red-600');
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.disabled = false;
+                            btn.classList.remove('bg-red-600');
+                            btn.classList.add('bg-emerald-500', 'hover:bg-emerald-600');
+                        }, 3000);
+                    });
             });
         }
         
@@ -685,5 +709,5 @@
         
         window.onload = init;
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a082db36bbc996e0',t:'MTc4MDg2ODg1Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
