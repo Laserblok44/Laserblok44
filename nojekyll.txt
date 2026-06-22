@@ -1,0 +1,2 @@
+# Ova datoteka onemogućava Jekyll build na GitHub Pages
+# Omogućava direktno serviranje HTML/CSS/JS fajlova

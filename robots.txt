@@ -1,4 +1,23 @@
+# Robot ekskluzioni standard za Agencija MI
+# https://laserblok44.github.io/Laserblok44/
+
 User-agent: *
 Allow: /
 
+# Blokiraj administrativne foldere (ako ih ima)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Dozvoli sve poznate botove
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap lokacija
 Sitemap: https://laserblok44.github.io/Laserblok44/sitemap.xml
